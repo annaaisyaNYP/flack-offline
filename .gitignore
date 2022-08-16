@@ -1,0 +1,4 @@
+/.venv
+/intent_model_a1.0
+/token_model
+/__pycache__

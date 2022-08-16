@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Alba x NYP - SIT{% endblock %}
+
+{% block content %}
+<h1>AI Models</h1>
+<p>hello world</p>
+
+<form method="POST" action="" class="form-group">
+    <div class="input-group mb-3">
+        {{ render_field(form.img, class="form-control special" ) }}
+        <button class="btn btn-primary" type="submit" id="submit-btn">Send</button>
+    </div>
+</form>
+{% endblock %}
