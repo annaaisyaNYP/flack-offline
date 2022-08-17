@@ -2,13 +2,33 @@
 {% block title %}Alba x NYP - SIT{% endblock %}
 
 {% block content %}
-<h1>AI Models</h1>
-<p>hello world</p>
+<div class="container">
+    <h1>AI Model- Object Detection</h1>
+    <p>Our AI model is able to detect mice, keyboards and laptops. \nTry uploading a picture!</p>
 
-<form method="POST" action="" class="form-group">
-    <div class="input-group mb-3">
-        {{ render_field(form.img, class="form-control special" ) }}
-        <button class="btn btn-primary" type="submit" id="submit-btn">Send</button>
+    {% if errBool %}
+    <div class="alert alert-danger" role="alert">
+        {{ errText }}
     </div>
-</form>
+    {% else %}
+    <br>
+    {% endif %}
+
+    <form method="POST" action="/image" enctype="multipart/form-data" class="form-group">
+        <div class="mb-3">
+            <input class="form-control" type="file" id="formFile">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit" id="submit-btn">Upload</button>
+        </div>
+    </form>
+
+    {% if resBool %}
+    <div class="alert alert-danger" role="alert">
+        {{ resText }}
+    </div>
+    {% else %}
+    <br>
+    {% endif %}
+</div>
 {% endblock %}
